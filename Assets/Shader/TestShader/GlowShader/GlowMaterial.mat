@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Glow
+  m_Name: GlowMaterial
   m_Shader: {fileID: -6465566751694194690, guid: 484b80bb0f984b742ba5239d24db8636,
     type: 3}
   m_Parent: {fileID: 0}
