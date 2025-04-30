@@ -6,12 +6,14 @@ using UnityEngine.Rendering.Universal;
 
 public class FOVChanger : MonoBehaviour
 {
-    [SerializeField] Volume volume; // Assign in Inspector
+    [SerializeField] Volume volume;
     private DepthOfField dof;
     [SerializeField] FirstPersonController firstPersonController;
     public float targetStart;
     public float targetEnd;
-
+    private void Start() {
+        volume = GameObject.FindGameObjectWithTag("Volumn").GetComponent<Volume>();
+    }
     private void Update() {
         if (firstPersonController.isZoomed){
             if (volume.profile.TryGet(out dof)){

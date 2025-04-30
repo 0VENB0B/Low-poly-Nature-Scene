@@ -8,13 +8,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Mirror;
+using Mirror.Examples.Common;
+
 
 #if UNITY_EDITOR
-    using UnityEditor;
+using UnityEditor;
     using System.Net;
 #endif
 
-public class FirstPersonController : MonoBehaviour
+public class FirstPersonController : NetworkBehaviour
 {
     private Rigidbody rb;
 
@@ -151,6 +154,8 @@ public class FirstPersonController : MonoBehaviour
 
     void Start()
     {
+        playerCamera.gameObject.SetActive(isLocalPlayer);
+
         if(lockCursor)
         {
             Cursor.lockState = CursorLockMode.Locked;
@@ -202,6 +207,8 @@ public class FirstPersonController : MonoBehaviour
 
     private void Update()
     {
+        if (!isLocalPlayer) return;
+        gameObject.tag = "Player";
         #region Camera
 
         // Control camera movement

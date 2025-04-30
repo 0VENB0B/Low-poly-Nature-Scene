@@ -1,4 +1,6 @@
+using Mirror;
+
 public interface IInteractable
 {
-    public void Interact();
+    public void Interact(NetworkIdentity player);
 }

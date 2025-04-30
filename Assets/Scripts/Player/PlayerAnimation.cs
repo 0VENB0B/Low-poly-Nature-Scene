@@ -1,9 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
+using Mirror;
 using UnityEditor.Animations;
 using UnityEngine;
 
-public class PlayerAnimation : MonoBehaviour
+public class PlayerAnimation : NetworkBehaviour
 {
     [SerializeField] Rigidbody rb;
     [SerializeField]float speed;
@@ -13,6 +14,7 @@ public class PlayerAnimation : MonoBehaviour
         
     }
     void Update(){
+        if (!isLocalPlayer) return;
         speed = rb.velocity.magnitude;
         if (speed > 2){
             animatorController.SetBool("IsMoving", true);
