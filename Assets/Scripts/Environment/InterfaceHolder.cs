@@ -2,5 +2,5 @@ using Mirror;
 
 public interface IInteractable
 {
-    public void Interact(NetworkIdentity player);
+    public void Interact();
 }
