@@ -9,6 +9,7 @@ public class PlayerAnimation : NetworkBehaviour
     [SerializeField] Rigidbody rb;
     [SerializeField]float speed;
     [SerializeField]Animator animatorController;
+    public Transform rightHandTarget;
     void Start(){
         rb = GetComponent<Rigidbody>();
         
@@ -23,4 +24,5 @@ public class PlayerAnimation : NetworkBehaviour
 
         }
     }
+
 }
