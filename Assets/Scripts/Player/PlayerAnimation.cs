@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using Mirror;
-using UnityEditor.Animations;
 using UnityEngine;
 
 public class PlayerAnimation : NetworkBehaviour
